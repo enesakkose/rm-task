@@ -1,0 +1,22 @@
+.mediaLinks{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.875rem;
+
+    .media{
+        width: 1.125rem;
+        height: 1.125rem;
+        border-radius: .25rem;
+        background-color: $PRIMARY-400;
+        color: $SECONDARY-50;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: 200ms scale ease-in-out;
+
+        &:hover{
+            scale: 1.1;
+        }
+    }
+}

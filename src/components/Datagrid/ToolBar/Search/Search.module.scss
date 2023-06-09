@@ -1,0 +1,23 @@
+.search{
+    width: 23.75rem;
+    height: 2.625rem;
+    background-color: $SECONDARY-50;
+    border-radius: 1.30rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    input{
+        color: $SECONDARY-400;
+        font-size: 14px;
+        background-color: transparent;
+        padding-inline: $P-3;
+        height: 100%;
+        width: 100%;
+    }
+
+    .searchBtn{
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}

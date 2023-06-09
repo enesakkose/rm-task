@@ -1,0 +1,38 @@
+.button{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    color: $SECONDARY-50;
+    flex-shrink: 0;
+    font-size: 14px;
+
+    &:disabled, &[disabled]{
+        opacity: .5;
+        pointer-events: none;
+    }
+    &:is(.primary, .secondary){
+        height: 2.625rem;
+        padding-inline: $P-2;
+        border-radius: 1.30rem;
+
+        .icon{
+            gap: .875rem;
+        }
+    }
+
+    &.primary{
+        background-color: $PRIMARY-400;
+    }
+
+    &.secondary{
+        background-color: $PRIMARY-50;
+        color: $PRIMARY-400;
+    }
+
+    &.icon{
+    }
+}

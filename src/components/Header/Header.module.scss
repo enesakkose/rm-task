@@ -1,0 +1,10 @@
+.header{
+    background-color: $SECONDARY-50;
+    
+    .headerContainer{
+        height: 6.5rem;
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 3fr 1fr;
+    }
+}
