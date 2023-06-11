@@ -5,13 +5,14 @@ import styles from './MainContainer.module.scss'
 type MainContainerPropType = {
   children: React.ReactNode
   className?: string
+  as?: keyof JSX.IntrinsicElements
 }
 
-function MainContainer({ children, className }: MainContainerPropType) {
+function MainContainer({ as: Component = 'div', children, className }: MainContainerPropType) {
   return (
-    <div className={clsx(styles.mainContainer, className)}>
+    <Component className={clsx(styles.mainContainer, className)}>
       {children}
-    </div>
+    </Component>
   )
 }
 

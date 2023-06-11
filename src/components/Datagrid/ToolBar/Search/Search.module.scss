@@ -11,7 +11,7 @@
         color: $SECONDARY-400;
         font-size: 14px;
         background-color: transparent;
-        padding-inline: $P-3;
+        padding-inline: $P-4;
         height: 100%;
         width: 100%;
     }
@@ -19,5 +19,6 @@
     .searchBtn{
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
+        padding-inline: $P-2;
     }
 }

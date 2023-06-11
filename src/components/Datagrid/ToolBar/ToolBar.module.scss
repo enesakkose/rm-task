@@ -1,0 +1,12 @@
+.toolBar{
+    margin-top: $M-5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    .filterTool{
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+    }
+}

@@ -1,0 +1,12 @@
+.setPage{
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    font-size: 12px;
+
+    .currentPage{
+        padding: $P-1;
+        border: 1px solid $SECONDARY-100;
+        border-radius: .25rem;
+    }
+}

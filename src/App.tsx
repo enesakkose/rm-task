@@ -1,14 +1,12 @@
-import MainContainer from './containers/MainContainer'
+import React from 'react'
 import Header from './components/Header'
 import Datagrid from './components/Datagrid'
 
 function App() {
   return (
-    <div>
-        <Header/>
-      <MainContainer>
-        <Datagrid/>
-      </MainContainer>
+    <div className='App'>
+      <Header />
+      <Datagrid />
     </div>
   )
 }

@@ -6,7 +6,8 @@
     background-color: transparent;
     -webkit-tap-highlight-color: transparent;
     user-select: none;
-    color: $SECONDARY-50;
+    color: $SECONDARY-900;
+    font-weight: 500;
     flex-shrink: 0;
     font-size: 14px;
 
@@ -14,18 +15,24 @@
         opacity: .5;
         pointer-events: none;
     }
-    &:is(.primary, .secondary){
+    &:is(.primary, .secondary, .tertiary, .outline){
         height: 2.625rem;
-        padding-inline: $P-2;
+        padding-inline: $P-3;
         border-radius: 1.30rem;
 
-        .icon{
-            gap: .875rem;
+        &.icon{
+            gap: .5rem;
         }
     }
 
     &.primary{
         background-color: $PRIMARY-400;
+        transition: 200ms opacity ease-in-out;
+        color: $SECONDARY-50;
+
+        &:hover{
+            opacity: .9;
+        }
     }
 
     &.secondary{
@@ -33,6 +40,27 @@
         color: $PRIMARY-400;
     }
 
-    &.icon{
+    &.tertiary{
+        background-color: $SECONDARY-50;
+        color: $PRIMARY-400;
+        padding-inline: $P-2;
+    }
+
+    &.outline{
+        background-color: $SECONDARY-50;
+        border: 1px solid $PRIMARY-200;
+        color: $SECONDARY-900;
+        transition: 200ms border-color ease-in-out;
+
+        &:hover{
+            border-color: $PRIMARY-500;
+        }
+    }
+
+    &.unstyled{
+
+        &.icon{
+            color: $PRIMARY-400;
+        }
     }
 }

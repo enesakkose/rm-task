@@ -1,0 +1,46 @@
+.row{
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    font-size: 12px;
+
+    .showText{
+        color: $PRIMARY-400;
+    }
+
+    .setRow{
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+
+        .rowInfo{
+            width: 3.125rem;
+            font-size: 12px;
+        }
+
+        .icon{
+            display: flex;
+            flex-direction: column;
+            color: $PRIMARY-400;
+        }
+    }
+
+    .selectRowDropdown{
+
+        .selectRows{
+            background-color: $PRIMARY-50;
+            box-shadow: $HOVER-BOX-SHADOW;
+            border-radius: .5rem;
+            
+            .select{
+                color: $SECONDARY-900;
+                padding: $P-2 $P-3;
+                cursor: default;
+
+                &:hover{
+                    background-color: $SECONDARY-100;
+                }
+            }
+        }
+    }
+}

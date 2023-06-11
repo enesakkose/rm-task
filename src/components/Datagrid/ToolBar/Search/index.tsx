@@ -6,7 +6,7 @@ function Search() {
   return (
     <div className={styles.search}>
       <input type="text" placeholder='Search Objects...' />
-      <Button variant='primary' icon='search' size={20} className={styles.searchBtn}/>
+      <Button variant='primary' icon='s' size={20} className={styles.searchBtn}/>
     </div>
   )
 }

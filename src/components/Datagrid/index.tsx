@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from '../UI/Button'
 import ToolBar from './ToolBar'
+import MainContainer from '@/containers/MainContainer'
+import Pagination from './Pagination'
+import Content from './Content'
 import styles from './Datagrid.module.scss'
 
 function Datagrid() {
   return (
-    <main className={styles.datagrid}>
+    <MainContainer as='main' className={styles.datagrid}>
       <ToolBar/>
-    </main>
+      <Content/>
+      <Pagination/>
+    </MainContainer>
   )
 }
 

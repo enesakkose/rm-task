@@ -1,0 +1,49 @@
+.table{
+    border: 1px solid $SECONDARY-100;
+    border-radius: .5rem;
+    margin-block: $M-1 $M-2;
+    width: 100%;
+
+    .content{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1.25fr;
+        
+        .group{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+
+            &:not(:last-child){
+
+                border-right: 1px solid $PRIMARY-100;
+            }
+
+            .item{
+                padding: $P-3;
+                background-color: $SECONDARY-50;
+                font-size: 12px;
+
+                &.c{
+                    background: transparent;
+                }
+            }
+        }
+    }   
+
+
+    .header{
+        border-bottom: 1px solid $PRIMARY-100;
+        padding: $P-3;
+        background-color: $SECONDARY-50;
+        text-align: start;
+        width: 100%;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .content{
+        
+    }
+}
