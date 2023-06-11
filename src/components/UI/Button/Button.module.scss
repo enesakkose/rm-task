@@ -38,6 +38,12 @@
     &.secondary{
         background-color: $PRIMARY-50;
         color: $PRIMARY-400;
+        border: 1px solid transparent;
+        transition: 200ms border-color ease-in-out;
+
+        &:hover{
+            border-color: $PRIMARY-400;
+        }
     }
 
     &.tertiary{

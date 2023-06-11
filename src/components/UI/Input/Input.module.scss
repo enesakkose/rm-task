@@ -1,0 +1,33 @@
+.formInput{
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+    font-size: 13px;
+
+    .label{
+        font-weight: 600;
+    }
+
+    input{
+        border: 1px solid $SECONDARY-200;
+        height: 2.625rem;
+        border-radius: 1.30rem;
+        padding-inline: $P-5;
+        background-color: transparent;
+        color: $SECONDARY-400;
+
+        &:focus{
+            border-color: $PRIMARY-400;
+        }
+    }
+
+    &:has(.errorText) {
+        input{
+            border-color: red;
+        }
+    }
+
+    .errorText{
+        color: red;
+    }
+}

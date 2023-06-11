@@ -1,5 +1,4 @@
 import React from 'react'
-import Button from '@/components/UI/Button'
 import Icon from '@/components/Icon'
 import {
   DropdownRoot,
@@ -18,7 +17,7 @@ function Row() {
     { value: '4', piece: '4 rows' },
     { value: '8', piece: '8 rows' },
     { value: '12', piece: '12 rows' },
-    { value: '20', piece: '20 rows' }
+    { value: '20', piece: '20 rows' },
   ]
 
   return (
@@ -35,7 +34,11 @@ function Row() {
           </DropdownTrigger>
           <DropdownList className={styles.selectRows}>
             {SelectRows.map((select) => (
-              <DropdownItem onClick={() => setRow(select)} className={styles.select} key={select.value}>
+              <DropdownItem
+                onClick={() => setRow(select)}
+                className={styles.select}
+                key={select.value}
+              >
                 {select.piece}
               </DropdownItem>
             ))}
