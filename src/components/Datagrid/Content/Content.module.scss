@@ -5,45 +5,61 @@
     width: 100%;
 
     .content{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1.25fr;
         
-        .group{
-            display: flex;
-            flex-direction: column;
+        .headerGroup{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1.25fr;
             width: 100%;
+            
+            .header{
+                border-bottom: 1px solid $PRIMARY-100;
+                padding: $P-3;
+                background-color: $SECONDARY-50;
+                text-align: start;
+                width: 100%;
+                font-size: 13px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
 
-            &:not(:last-child){
+                &:not(:last-child){
+                    border-right: 1px solid $PRIMARY-100;
+                }
 
-                border-right: 1px solid $PRIMARY-100;
+                @media only screen and (max-width: $SM){
+                    padding: $P-1;
+                }
+            }
+        }
+
+        .listItem{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1.25fr;
+            background: $SECONDARY-50;
+            cursor: default;
+
+            &.c{
+                background: $MAIN-GRADIENT;
+            }
+
+            &:hover{
+                scale: 1.001;
+                box-shadow: $HOVER-BOX-SHADOW;
             }
 
             .item{
                 padding: $P-3;
-                background-color: $SECONDARY-50;
                 font-size: 12px;
 
-                &.c{
-                    background: transparent;
+                &:not(:last-child){
+                    border-right: 1px solid $PRIMARY-100;
+                }
+
+                @media only screen and (max-width: $SM){
+                    padding: $P-1;
                 }
             }
+            
         }
     }   
-
-
-    .header{
-        border-bottom: 1px solid $PRIMARY-100;
-        padding: $P-3;
-        background-color: $SECONDARY-50;
-        text-align: start;
-        width: 100%;
-        font-size: 13px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    .content{
-        
-    }
 }

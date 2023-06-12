@@ -1,19 +1,23 @@
-.search{
+.form{
     width: 23.75rem;
-    height: 2.625rem;
     background-color: $SECONDARY-50;
     border-radius: 1.30rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
 
+    @media only screen and (max-width: $SM){
+        width: 20rem;
+    }
+
     input{
-        color: $SECONDARY-400;
         font-size: 14px;
         background-color: transparent;
-        padding-inline: $P-5;
-        height: 100%;
-        width: 100%;
+        border-color: transparent;
+
+        &:hover{
+            border-color: transparent;
+        }
     }
 
     .searchBtn{
