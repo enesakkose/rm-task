@@ -31,11 +31,8 @@
             background-color: $PRIMARY-50;
             box-shadow: $HOVER-BOX-SHADOW;
             border-radius: .5rem;
-
-            @media only screen and (max-width: $SM){
-                bottom: 100%;
-                top: unset;
-            }
+            bottom: 100%;
+            top: unset;
             
             .select{
                 color: $SECONDARY-900;

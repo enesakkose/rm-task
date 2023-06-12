@@ -13,7 +13,6 @@
             
             .header{
                 border-bottom: 1px solid $PRIMARY-100;
-                padding: $P-3;
                 background-color: $SECONDARY-50;
                 text-align: start;
                 width: 100%;
@@ -37,6 +36,7 @@
             grid-template-columns: 1fr 1fr 1.25fr;
             background: $SECONDARY-50;
             cursor: default;
+            height: 3.75rem;
 
             &.c{
                 background: $MAIN-GRADIENT;
