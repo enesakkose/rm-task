@@ -16,7 +16,7 @@ export type CreateAccountObjectType = {
 function Modal() {
   const { setOpen } = useModalContext()
   const closeHandle = () => setOpen(false)
-  const { setSearchData, searchData } = useAccountInfoContext()
+  const { setSearchData, searchData, setDefaultArray, defaultArray } = useAccountInfoContext()
   const modalRef = useClickOutside<HTMLDivElement>(closeHandle)
   const onSubmit = (
     values: CreateAccountObjectType,
@@ -30,7 +30,8 @@ function Modal() {
     new Promise<void>((resolve) => {
       setTimeout(() => { resolve() }, 2000)
     }).then(() => {
-      setSearchData([values, ...searchData])
+      setSearchData([values, ...searchData])//add localdata for optimistic ui
+      setDefaultArray([values, ...defaultArray])
       setSubmitting(false)
       closeHandle()
     })
