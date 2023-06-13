@@ -1,4 +1,3 @@
-//TR
 ---
 # Datagrid Uygulaması Dokümantasyonu
 
@@ -42,6 +41,6 @@ Canlı olarak incelemek için [bu](https://rm-task-enesakkose.vercel.app/) linkt
 
 ## Proje Dağıtımı
 - Uygulama, geliştirme aşamasının tamamlanmasının ardından dağıtıma hazır hale getirildi.
-- Uygulama, canlı ortama [Vercel](https://vercel.com/) aracılığıyla dağıtıldı.
+- Uygulama, canlı ortama [Vercel](https://vercel.com/) aracılığıyla yayınlandı.
 
 ---
