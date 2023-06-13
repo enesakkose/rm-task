@@ -7,13 +7,11 @@ import {
   DropdownItem,
 } from '@/components/Dropdown'
 import { useRowContext } from '@/context/RowContext'
-import { useAccountInfoContext } from '@/context/AccountInfoContext'
 import { type RowType } from '@/context/RowContext'
 import styles from './Row.module.scss'
 
 function Row() {
   const { row, setRow } = useRowContext()
-  const { setData } = useAccountInfoContext()
   const SelectRows: RowType[] = [
     { value: '4', piece: '4 rows' },
     { value: '8', piece: '8 rows' },

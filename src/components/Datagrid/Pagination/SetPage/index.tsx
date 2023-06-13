@@ -7,7 +7,7 @@ import styles from './SetPage.module.scss'
 function SetPage() {
   const [currentPage, setCurrentPage] = useState(1)
   const { row } = useRowContext()
-  const { setData, setCurrentData, searchData, data } = useAccountInfoContext()
+  const { setData, setCurrentData, searchData } = useAccountInfoContext()
   const totalPage = Math.ceil((searchData.length) / Number(row.value))
   
   useEffect(() => {
