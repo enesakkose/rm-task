@@ -1,11 +1,15 @@
 # Rast Mobile Task
-
-## What I learned
-
-
 ## Overview
 
 The main goal of this project is to create a datagrid where users can enter their social media account information. Project created with [reactjs](https://reactjs.org/).
+## What I learned
+
+- I have dealt with more detailed usage examples of the sort method.
+- I learned how to make pagination.
+- I learned how to use the react context api more efficiently.
+- I took care to make all structures by separating them into components. This made the application easier to maintain.
+- The application was made without using any datagrid library, in this way, more benefit from the React library.
+- [Formik](https://formik.org/) and [Yup](https://github.com/jquense/yup) packages were used for the construction and validation of the forms.
 
 ### To use locally
 
