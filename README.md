@@ -1,4 +1,5 @@
 # Rast Mobile Task
+### [Live](https://rm-task-enesakkose.vercel.app/)
 ## Overview
 
 The project is created with React.js and its main objective is to allow users to easily add their social media accounts to a data grid table.
