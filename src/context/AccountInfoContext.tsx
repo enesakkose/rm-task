@@ -28,7 +28,7 @@ type AccountInfoProviderProps = {
 
 export const AccountInfoProvider = ({ children }: AccountInfoProviderProps) => {
   const localData = JSON.parse(localStorage.getItem('accountsInfo') || 'null')
-  const dataWithMock: CreateAccountObjectType[] = [...MOCK, ...localData]
+  const dataWithMock: CreateAccountObjectType[] =  localData ? [...MOCK, ...localData] : [...MOCK]
   const [data, setData] = useState(dataWithMock.slice(0, 8))// for begin data
   const [currentData, setCurrentData] = useState(dataWithMock.slice(0, 8))//for filter
   const defaultArray = [...dataWithMock]//for search query
