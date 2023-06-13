@@ -1,4 +1,3 @@
----
 # Datagrid Uygulaması Dokümantasyonu
 
 ## Kullanılan Teknolojiler
