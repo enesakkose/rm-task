@@ -27,6 +27,7 @@
 
                 @media only screen and (max-width: $SM){
                     padding: $P-1;
+                    font-size: 11px;
                 }
             }
         }
@@ -50,6 +51,9 @@
             .item{
                 padding: $P-3;
                 font-size: 12px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
 
                 &:not(:last-child){
                     border-right: 1px solid $PRIMARY-100;

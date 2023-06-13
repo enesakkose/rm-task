@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import Icon from '../Icon'
+import { useState } from 'react'
 import BrandLogo from '../BrandLogo'
 import MainContainer from '@/containers/MainContainer'
 import Navbar from './Navbar'
@@ -10,6 +9,7 @@ import styles from './Header.module.scss'
 
 function Header() {
   const SM = useGetBreakPoint('SM')
+
   const MobileHeader = () => {
     const [open, setOpen] = useState(false)
     return (

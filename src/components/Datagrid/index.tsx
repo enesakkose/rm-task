@@ -1,5 +1,3 @@
-import React, { useState } from 'react'
-import Button from '../UI/Button'
 import ToolBar from './ToolBar'
 import Modal from '../Modal'
 import MainContainer from '@/containers/MainContainer'

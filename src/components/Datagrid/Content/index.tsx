@@ -1,7 +1,4 @@
-import React from 'react'
 import clsx from 'clsx'
-import Button from '@/components/UI/Button'
-import { MOCK } from '@/utils/helpers/mock'
 import SortBtn from './SortBtn'
 import Link from '@/components/UI/Link'
 import { useAccountInfoContext } from '@/context/AccountInfoContext'
@@ -11,7 +8,6 @@ import styles from './Content.module.scss'
 function Content() {
   const { data } = useAccountInfoContext()
   const { row } = useRowContext()
-  console.log(row.piece)
 
   return (
     <table className={styles.table}>
@@ -46,7 +42,7 @@ function Content() {
         .map((_, index) => (
           <tr
             key={index}
-            className={clsx(styles.listItem, index % 2 === 0 ? '' : styles.c)}
+            className={clsx(styles.listItem, (index +  data.length) % 2 === 0 ? '' : styles.c)}
           >
             <td className={styles.item}>
             </td>

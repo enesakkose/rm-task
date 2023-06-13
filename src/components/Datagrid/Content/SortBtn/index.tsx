@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Icon from '@/components/Icon'
 import Button from '@/components/UI/Button'
 import { useAccountInfoContext } from '@/context/AccountInfoContext'

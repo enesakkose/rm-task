@@ -8,6 +8,8 @@ type AccountInfoContextType = {
   defaultArray: CreateAccountObjectType[]
   currentData: CreateAccountObjectType[]
   setCurrentData: React.Dispatch<React.SetStateAction<CreateAccountObjectType[]>>
+  searchData: CreateAccountObjectType[]
+  setSearchData: React.Dispatch<React.SetStateAction<CreateAccountObjectType[]>>
 }
 
 const AccountInfoContext = createContext<AccountInfoContextType | undefined>(undefined)
@@ -25,11 +27,14 @@ type AccountInfoProviderProps = {
 }
 
 export const AccountInfoProvider = ({ children }: AccountInfoProviderProps) => {
-  const [data, setData] = useState(MOCK.slice(0, 8))
-  const [currentData, setCurrentData] = useState(MOCK.slice(0, 8))
-  const defaultArray = [...MOCK]
+  const localData = JSON.parse(localStorage.getItem('accountsInfo') || 'null')
+  const dataWithMock: CreateAccountObjectType[] = [...MOCK, ...localData]
+  const [data, setData] = useState(dataWithMock.slice(0, 8))// for begin data
+  const [currentData, setCurrentData] = useState(dataWithMock.slice(0, 8))//for filter
+  const defaultArray = [...dataWithMock]//for search query
+  const [searchData, setSearchData] = useState([...defaultArray])// for search query
 
-  const value = { data, setData, defaultArray, currentData, setCurrentData }
+  const value = { data, setData, defaultArray, currentData, setCurrentData, searchData, setSearchData }
 
   return <AccountInfoContext.Provider value={value}>{children}</AccountInfoContext.Provider>
 }

@@ -1,4 +1,3 @@
-import React from 'react'
 import Icon from '@/components/Icon'
 import Link from '@/components/UI/Link'
 import styles from './MediaLinks.module.scss'

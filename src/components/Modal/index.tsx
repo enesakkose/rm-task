@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react'
 import Button from '../UI/Button'
 import Input from '../UI/Input'
 import { Formik, Form, FormikHelpers } from 'formik'
@@ -15,22 +14,24 @@ export type CreateAccountObjectType = {
 
 function Modal() {
   const { setOpen } = useModalContext()
-  const closeHandle = () => { setOpen(false) }
+  const closeHandle = () => setOpen(false)
   const modalRef = useClickOutside<HTMLDivElement>(closeHandle)
   const onSubmit = (
     values: CreateAccountObjectType,
     { setSubmitting }: FormikHelpers<CreateAccountObjectType>
   ) => {
-    let s: CreateAccountObjectType[] = [];
-    s.push(values)
-    localStorage.setItem('ls', JSON.stringify(s));
+    let storageData = JSON.parse(localStorage.getItem('accountsInfo') || 'null')
 
-    const myBlogs = ["https://catalins.tech", "https://exampleblog.com", 'esssssss'];
-    localStorage.setItem('links', JSON.stringify(myBlogs));
-
-    
+    if (storageData === null) { storageData = [] }
+    storageData = [...storageData, values]
+    localStorage.setItem('accountsInfo', JSON.stringify(storageData))
+    new Promise<void>((resolve) => {
+      setTimeout(() => { resolve() }, 2000)
+    }).then(() => {
+      setSubmitting(false)
+      closeHandle()
+    })
   }
-
 
   return (
     <div className={styles.modalContainer}>
@@ -46,18 +47,21 @@ function Modal() {
           {({ isSubmitting }) => (
             <Form className={styles.form}>
               <Input
+                autoComplete='off'
                 type='text'
                 name='link'
                 label='Sosyal medya linki'
                 placeholder='Sosyal medya linkinizi girin...'
               />
               <Input
+                autoComplete='off'
                 type='text'
                 name='name'
                 label='Sosyal medya adı'
                 placeholder='Sosyal medya adınızı girin...'
               />
               <Input
+                autoComplete='off'
                 type='text'
                 name='description'
                 label='Açıklama'

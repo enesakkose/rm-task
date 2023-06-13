@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Search from './Search'
 import Button from '@/components/UI/Button'
 import { useModalContext } from '@/context/ModalContext'

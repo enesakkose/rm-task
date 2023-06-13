@@ -1,12 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from '@/components/UI/Button'
-import Input from '@/components/UI/Input'
-import { Formik, Form, FormikHelpers } from 'formik'
 import { useAccountInfoContext } from '@/context/AccountInfoContext'
 import styles from './Search.module.scss'
 
 function Search() {
-  const { setData, defaultArray, setCurrentData } = useAccountInfoContext()
+  const { defaultArray, setCurrentData, setSearchData } = useAccountInfoContext()
+  const [query, setQuery] = useState('')
 
   const filterData = (query: string) => {
     const filteredData = defaultArray.filter(
@@ -15,40 +14,27 @@ function Search() {
         item.description.toLocaleLowerCase().includes(query.toLocaleLowerCase()) ||
         item.link.toLocaleLowerCase().includes(query.toLocaleLowerCase())
     )
-    setData(filteredData)
     setCurrentData(filteredData)
+    setSearchData(filteredData)
   }
 
-  const onSubmit = (
-    values: { query: string },
-    { setSubmitting }: FormikHelpers<{ query: string }>
-  ) => {
-    new Promise<void>((resolve) => {
-      setTimeout(() => {
-        resolve()
-      }, 2000)
-    }).then(() => {
-      filterData(values.query)
-      setSubmitting(false)
-    })
+  const handleQuery = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setQuery(e.target.value)
+    filterData(e.target.value)
   }
 
   return (
-    <Formik initialValues={{ query: '' }} onSubmit={onSubmit}>
-      {({ isSubmitting }) => (
-        <Form className={styles.form}>
-          <Input autoComplete='off' type='text' placeholder='Search Objects...' name='query' />
-          <Button
-            disabled={isSubmitting}
-            type='submit'
-            variant='primary'
-            icon='s'
-            size={20}
-            className={styles.searchBtn}
-          />
-        </Form>
-      )}
-    </Formik>
+    <div className={styles.form}>
+      <input
+        autoComplete='off'
+        type='text'
+        value={query}
+        placeholder='Search Objects...'
+        name='query'
+        onChange={handleQuery}
+      />
+      <Button type='submit' variant='primary' icon='s' size={20} className={styles.searchBtn} />
+    </div>
   )
 }
 

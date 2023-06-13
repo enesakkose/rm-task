@@ -1,4 +1,3 @@
-import React from 'react'
 import Row from './Row'
 import SetPage from './SetPage'
 import styles from './Pagination.module.scss'
