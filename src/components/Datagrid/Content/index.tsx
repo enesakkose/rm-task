@@ -23,7 +23,7 @@ function Content() {
             <SortBtn sortBy='description' title='Açıklama' />
           </th>
         </tr>
-        {data.map((accountInfo, index) => (
+        {data.reverse().map((accountInfo, index) => (
           <tr
             key={index}
             className={clsx(styles.listItem, index % 2 === 0 ? '' : styles.c)}

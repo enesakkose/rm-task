@@ -27,14 +27,14 @@ type AccountInfoProviderProps = {
 }
 
 export const AccountInfoProvider = ({ children }: AccountInfoProviderProps) => {
-  const localData = JSON.parse(localStorage.getItem('accountsInfo') || 'null')
-  const dataWithMock: CreateAccountObjectType[] =  localData ? [...MOCK, ...localData] : [...MOCK]
+  const [localData, setLocalData] = useState(JSON.parse(localStorage.getItem('accountsInfo') || 'null'))
+  const dataWithMock: CreateAccountObjectType[] =  localData ? [...MOCK, ...localData].reverse() : [...MOCK].reverse()
   const [data, setData] = useState(dataWithMock.slice(0, 8))// for begin data
   const [currentData, setCurrentData] = useState(dataWithMock.slice(0, 8))//for filter
   const defaultArray = [...dataWithMock]//for search query
   const [searchData, setSearchData] = useState([...defaultArray])// for search query
 
-  const value = { data, setData, defaultArray, currentData, setCurrentData, searchData, setSearchData }
+  const value = { data, setData, defaultArray, currentData, setCurrentData, searchData, setSearchData, setLocalData, localData }
 
   return <AccountInfoContext.Provider value={value}>{children}</AccountInfoContext.Provider>
 }

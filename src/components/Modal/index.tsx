@@ -3,6 +3,7 @@ import Input from '../UI/Input'
 import { Formik, Form, FormikHelpers } from 'formik'
 import { useModalContext } from '@/context/ModalContext'
 import { useClickOutside } from '@/utils/hooks/useClickOutside'
+import { useAccountInfoContext } from '@/context/AccountInfoContext'
 import { createAccountSchema } from '@/utils/helpers/formSchema'
 import styles from './Modal.module.scss'
 
@@ -15,6 +16,7 @@ export type CreateAccountObjectType = {
 function Modal() {
   const { setOpen } = useModalContext()
   const closeHandle = () => setOpen(false)
+  const { setSearchData, searchData } = useAccountInfoContext()
   const modalRef = useClickOutside<HTMLDivElement>(closeHandle)
   const onSubmit = (
     values: CreateAccountObjectType,
@@ -28,10 +30,13 @@ function Modal() {
     new Promise<void>((resolve) => {
       setTimeout(() => { resolve() }, 2000)
     }).then(() => {
+      setSearchData([values, ...searchData])
       setSubmitting(false)
       closeHandle()
     })
   }
+
+
 
   return (
     <div className={styles.modalContainer}>
