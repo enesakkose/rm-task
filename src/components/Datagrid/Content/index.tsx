@@ -37,6 +37,7 @@ function Content() {
             <td className={styles.item}>{accountInfo.description}</td>
           </tr>
         ))}
+        {/*This section is used to fill the content according to the number of rows when there is not enough data.*/}
         {Number(row.value) > data.length && Array(Number(row.value) - data.length)
         .fill(null)
         .map((_, index) => (
