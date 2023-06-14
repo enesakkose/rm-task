@@ -42,9 +42,6 @@ export default Search
 
 /*DESCRIPTION
 - This search input filtered data from localStorage
-- filteredData() function filtered by query parameter and then update to setData state
-- Formik used for search input
-- Fake promise used for loading state in onSubmit function
-- The search implementation usually works more efficiently with the api endpoint
-- To run the search implementation: Enter query in search input then click search button or enter keyword on your keyboard
+- filteredData() function filtered by query parameter and then update to setCurrenData and setSearchData states
+- To run the search implementation: Enter query in search input
 */
